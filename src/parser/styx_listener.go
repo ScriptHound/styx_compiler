@@ -1,4 +1,4 @@
-// Code generated from styx.g4 by ANTLR 4.9. DO NOT EDIT.
+// Code generated from styx.g4 by ANTLR 4.10.1. DO NOT EDIT.
 
 package parser // styx
 

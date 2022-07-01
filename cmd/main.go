@@ -3,14 +3,15 @@ package main
 import (
 	"fmt"
 
-	"parser"
+	parser "MTUCI_studying_practice/src/parser"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
 func main() {
 	is := antlr.NewInputStream("Hello world")
-	lexer := parser.NewCalcLexer(is)
+
+	lexer := parser.NewstyxLexer(is)
 
 	for {
 		token := lexer.NextToken()

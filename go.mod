@@ -1,4 +1,4 @@
-module main
+module MTUCI_studying_practice
 
 go 1.18
 

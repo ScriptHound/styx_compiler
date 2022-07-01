@@ -1,60 +1,80 @@
-// Code generated from styx.g4 by ANTLR 4.9. DO NOT EDIT.
+// Code generated from styx.g4 by ANTLR 4.10.1. DO NOT EDIT.
 
 package parser // styx
 
 import (
 	"fmt"
-	"reflect"
 	"strconv"
+	"sync"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
 // Suppress unused import errors
 var _ = fmt.Printf
-var _ = reflect.Copy
 var _ = strconv.Itoa
-
-var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 5, 8, 4,
-	2, 9, 2, 3, 2, 3, 2, 3, 2, 3, 2, 2, 2, 3, 2, 2, 2, 2, 6, 2, 4, 3, 2, 2,
-	2, 4, 5, 7, 3, 2, 2, 5, 6, 7, 4, 2, 2, 6, 3, 3, 2, 2, 2, 2,
-}
-var literalNames = []string{
-	"", "'hello'",
-}
-var symbolicNames = []string{
-	"", "", "ID", "WS",
-}
-
-var ruleNames = []string{
-	"r",
-}
+var _ = sync.Once{}
 
 type styxParser struct {
 	*antlr.BaseParser
 }
 
-// NewstyxParser produces a new parser instance for the optional input antlr.TokenStream.
-//
-// The *styxParser instance produced may be reused by calling the SetInputStream method.
-// The initial parser configuration is expensive to construct, and the object is not thread-safe;
-// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
-// objects can be used in a thread-safe manner.
-func NewstyxParser(input antlr.TokenStream) *styxParser {
-	this := new(styxParser)
-	deserializer := antlr.NewATNDeserializer(nil)
-	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
-	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-	this.BaseParser = antlr.NewBaseParser(input)
+var styxParserStaticData struct {
+	once                   sync.Once
+	serializedATN          []int32
+	literalNames           []string
+	symbolicNames          []string
+	ruleNames              []string
+	predictionContextCache *antlr.PredictionContextCache
+	atn                    *antlr.ATN
+	decisionToDFA          []*antlr.DFA
+}
 
-	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
-	this.RuleNames = ruleNames
-	this.LiteralNames = literalNames
-	this.SymbolicNames = symbolicNames
+func styxParserInit() {
+	staticData := &styxParserStaticData
+	staticData.literalNames = []string{
+		"", "'hello'",
+	}
+	staticData.symbolicNames = []string{
+		"", "", "ID", "WS",
+	}
+	staticData.ruleNames = []string{
+		"r",
+	}
+	staticData.predictionContextCache = antlr.NewPredictionContextCache()
+	staticData.serializedATN = []int32{
+		4, 1, 3, 6, 2, 0, 7, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 4, 0,
+		2, 1, 0, 0, 0, 2, 3, 5, 1, 0, 0, 3, 4, 5, 2, 0, 0, 4, 1, 1, 0, 0, 0, 0,
+	}
+	deserializer := antlr.NewATNDeserializer(nil)
+	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
+	atn := staticData.atn
+	staticData.decisionToDFA = make([]*antlr.DFA, len(atn.DecisionToState))
+	decisionToDFA := staticData.decisionToDFA
+	for index, state := range atn.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(state, index)
+	}
+}
+
+// styxParserInit initializes any static state used to implement styxParser. By default the
+// static state used to implement the parser is lazily initialized during the first call to
+// NewstyxParser(). You can call this function if you wish to initialize the static state ahead
+// of time.
+func StyxParserInit() {
+	staticData := &styxParserStaticData
+	staticData.once.Do(styxParserInit)
+}
+
+// NewstyxParser produces a new parser instance for the optional input antlr.TokenStream.
+func NewstyxParser(input antlr.TokenStream) *styxParser {
+	StyxParserInit()
+	this := new(styxParser)
+	this.BaseParser = antlr.NewBaseParser(input)
+	staticData := &styxParserStaticData
+	this.Interpreter = antlr.NewParserATNSimulator(this, staticData.atn, staticData.decisionToDFA, staticData.predictionContextCache)
+	this.RuleNames = staticData.ruleNames
+	this.LiteralNames = staticData.literalNames
+	this.SymbolicNames = staticData.symbolicNames
 	this.GrammarFileName = "styx.g4"
 
 	return this
@@ -134,6 +154,9 @@ func (s *RContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *styxParser) R() (localctx IRContext) {
+	this := p
+	_ = this
+
 	localctx = NewRContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, styxParserRULE_r)
 
