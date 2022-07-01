@@ -1,4 +1,5 @@
 // Define a grammar called Hello
+
 grammar styx;
 r  : 'hello' ID ;         // match keyword hello followed by an identifier
 ID : [a-z]+ ;             // match lower-case identifiers

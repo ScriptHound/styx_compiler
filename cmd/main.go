@@ -9,9 +9,9 @@ import (
 )
 
 func main() {
-	is := antlr.NewInputStream("Hello world")
+	is := antlr.NewInputStream("1+5-4*7")
 
-	lexer := parser.NewstyxLexer(is)
+	lexer := parser.Newstyx_generalLexer(is)
 
 	for {
 		token := lexer.NextToken()
