@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	is := antlr.NewInputStream("1+5-4*7")
+	is := antlr.NewInputStream("my_var = 14125")
 
 	lexer := parser.Newstyx_generalLexer(is)
 

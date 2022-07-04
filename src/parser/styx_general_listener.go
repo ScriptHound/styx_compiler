@@ -8,9 +8,21 @@ import "github.com/antlr/antlr4/runtime/Go/antlr"
 type styx_generalListener interface {
 	antlr.ParseTreeListener
 
-	// EnterExpr is called when entering the expr production.
-	EnterExpr(c *ExprContext)
+	// EnterAssignment is called when entering the assignment production.
+	EnterAssignment(c *AssignmentContext)
 
-	// ExitExpr is called when exiting the expr production.
-	ExitExpr(c *ExprContext)
+	// EnterMultiplicativeExpr is called when entering the multiplicativeExpr production.
+	EnterMultiplicativeExpr(c *MultiplicativeExprContext)
+
+	// EnterAdditiveExpr is called when entering the additiveExpr production.
+	EnterAdditiveExpr(c *AdditiveExprContext)
+
+	// ExitAssignment is called when exiting the assignment production.
+	ExitAssignment(c *AssignmentContext)
+
+	// ExitMultiplicativeExpr is called when exiting the multiplicativeExpr production.
+	ExitMultiplicativeExpr(c *MultiplicativeExprContext)
+
+	// ExitAdditiveExpr is called when exiting the additiveExpr production.
+	ExitAdditiveExpr(c *AdditiveExprContext)
 }

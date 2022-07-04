@@ -1,10 +1,22 @@
 grammar styx_general;
 
-expr : expr '*' expr
-     | expr '+' expr
-     | expr '+' expr
-     | expr '-' expr
-     | INT
+INT : [0-9]+;
+ID: [a-zA-Z]+;
+
+assignment
+     :    ID '=' INT
+     |    ID '=' ID
+     |    ID '=' additiveExpr
      ;
 
-INT : [0-9];
+multiplicativeExpr 
+     :    INT (('*'|'/') INT)*
+     |    ID (('*'|'/') ID)*
+     |    INT (('*'|'/') ID)*
+     |    ID (('*'|'/') INT)*
+     ;
+
+additiveExpr :
+     multiplicativeExpr (('+'| '-') multiplicativeExpr)*
+     ;
+

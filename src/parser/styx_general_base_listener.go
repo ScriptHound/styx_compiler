@@ -21,8 +21,20 @@ func (s *Basestyx_generalListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 // ExitEveryRule is called when any rule is exited.
 func (s *Basestyx_generalListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
 
-// EnterExpr is called when production expr is entered.
-func (s *Basestyx_generalListener) EnterExpr(ctx *ExprContext) {}
+// EnterAssignment is called when production assignment is entered.
+func (s *Basestyx_generalListener) EnterAssignment(ctx *AssignmentContext) {}
 
-// ExitExpr is called when production expr is exited.
-func (s *Basestyx_generalListener) ExitExpr(ctx *ExprContext) {}
+// ExitAssignment is called when production assignment is exited.
+func (s *Basestyx_generalListener) ExitAssignment(ctx *AssignmentContext) {}
+
+// EnterMultiplicativeExpr is called when production multiplicativeExpr is entered.
+func (s *Basestyx_generalListener) EnterMultiplicativeExpr(ctx *MultiplicativeExprContext) {}
+
+// ExitMultiplicativeExpr is called when production multiplicativeExpr is exited.
+func (s *Basestyx_generalListener) ExitMultiplicativeExpr(ctx *MultiplicativeExprContext) {}
+
+// EnterAdditiveExpr is called when production additiveExpr is entered.
+func (s *Basestyx_generalListener) EnterAdditiveExpr(ctx *AdditiveExprContext) {}
+
+// ExitAdditiveExpr is called when production additiveExpr is exited.
+func (s *Basestyx_generalListener) ExitAdditiveExpr(ctx *AdditiveExprContext) {}
