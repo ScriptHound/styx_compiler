@@ -17,6 +17,21 @@ type styx_generalListener interface {
 	// EnterAdditiveExpr is called when entering the additiveExpr production.
 	EnterAdditiveExpr(c *AdditiveExprContext)
 
+	// EnterExpression is called when entering the expression production.
+	EnterExpression(c *ExpressionContext)
+
+	// EnterExpressionList is called when entering the expressionList production.
+	EnterExpressionList(c *ExpressionListContext)
+
+	// EnterExpressionsBlock is called when entering the expressionsBlock production.
+	EnterExpressionsBlock(c *ExpressionsBlockContext)
+
+	// EnterReturnStatement is called when entering the returnStatement production.
+	EnterReturnStatement(c *ReturnStatementContext)
+
+	// EnterProcedure is called when entering the procedure production.
+	EnterProcedure(c *ProcedureContext)
+
 	// ExitAssignment is called when exiting the assignment production.
 	ExitAssignment(c *AssignmentContext)
 
@@ -25,4 +40,19 @@ type styx_generalListener interface {
 
 	// ExitAdditiveExpr is called when exiting the additiveExpr production.
 	ExitAdditiveExpr(c *AdditiveExprContext)
+
+	// ExitExpression is called when exiting the expression production.
+	ExitExpression(c *ExpressionContext)
+
+	// ExitExpressionList is called when exiting the expressionList production.
+	ExitExpressionList(c *ExpressionListContext)
+
+	// ExitExpressionsBlock is called when exiting the expressionsBlock production.
+	ExitExpressionsBlock(c *ExpressionsBlockContext)
+
+	// ExitReturnStatement is called when exiting the returnStatement production.
+	ExitReturnStatement(c *ReturnStatementContext)
+
+	// ExitProcedure is called when exiting the procedure production.
+	ExitProcedure(c *ProcedureContext)
 }

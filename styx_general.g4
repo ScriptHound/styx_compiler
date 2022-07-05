@@ -1,7 +1,7 @@
 grammar styx_general;
 
 INT : [0-9]+;
-ID: [a-zA-Z]+;
+ID: [a-zA-Z_\-]+;
 
 assignment
      :    ID '=' INT
@@ -20,21 +20,28 @@ additiveExpr :
      multiplicativeExpr (('+'| '-') multiplicativeExpr)*
      ;
 
-declarator
-     : ID
+expression
+     : assignment
+     | additiveExpr
      ;
 
-declaration
-     :    
+expressionList
+     : expression (',' expression)*
      ;
 
-declarationList
-     : declaration+
+expressionsBlock
+     : '{' (expression ';')* '}'
      ;
 
-functionDefinition
-    :     declarator declarationList? compoundStatement
-    ;
+returnStatement
+     : 'return' ID
+     | 'return' INT
+     ;
+
+procedure
+     : 'proc' ID '(' expressionList ')' expressionsBlock
+     ;
+
 
 WS
     :   [ \t\r\n]+ -> skip

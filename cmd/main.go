@@ -1,15 +1,25 @@
 package main
 
 import (
-	"fmt"
-
 	parser "MTUCI_studying_practice/src/parser"
+	"fmt"
+	"io/ioutil"
+	"log"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
 func main() {
-	is := antlr.NewInputStream("my_var = 14125")
+	content, err := ioutil.ReadFile("example.styx")
+	string_content := string(content)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(string_content)
+
+	is := antlr.NewInputStream(string_content)
 
 	lexer := parser.Newstyx_generalLexer(is)
 

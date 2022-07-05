@@ -1,24 +1,7 @@
-my_arr = [];
-my_arr.append(1);
-my_arr.append(2);
-println(my_arr[0]);
-
-my_arr[0] = 5;
-
-my_arr.delete(0);
-
-proc my_super_print(some_value){
-	println(some_value);
-}
-
 proc my_procedure(arg_one, arg_two){
 	a = arg_one;
 	b = arg_one + arg_two * 2;
-	println(b);
-	return b;
 }
 
-proc main(args){
-	my_procedure(1, 2);
-}
+my_int_variable = 566;
 
