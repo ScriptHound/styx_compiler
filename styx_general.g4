@@ -20,3 +20,22 @@ additiveExpr :
      multiplicativeExpr (('+'| '-') multiplicativeExpr)*
      ;
 
+declarator
+     : ID
+     ;
+
+declaration
+     :    
+     ;
+
+declarationList
+     : declaration+
+     ;
+
+functionDefinition
+    :     declarator declarationList? compoundStatement
+    ;
+
+WS
+    :   [ \t\r\n]+ -> skip
+    ;
