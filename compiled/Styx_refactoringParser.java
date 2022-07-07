@@ -1,4 +1,4 @@
-// Generated from Styx_refactoring.g4 by ANTLR 4.10.1
+// Generated from Styx_refactoring.g4 by ANTLR 4.9
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class Styx_refactoringParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.10.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -250,6 +250,14 @@ public class Styx_refactoringParser extends Parser {
 		public MultiplyExprContext multiplyExpr(int i) {
 			return getRuleContext(MultiplyExprContext.class,i);
 		}
+		public List<TerminalNode> ID() { return getTokens(Styx_refactoringParser.ID); }
+		public TerminalNode ID(int i) {
+			return getToken(Styx_refactoringParser.ID, i);
+		}
+		public List<TerminalNode> INT() { return getTokens(Styx_refactoringParser.INT); }
+		public TerminalNode INT(int i) {
+			return getToken(Styx_refactoringParser.INT, i);
+		}
 		public ExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -269,22 +277,63 @@ public class Styx_refactoringParser extends Parser {
 		enterRule(_localctx, 4, RULE_expression);
 		int _la;
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(35);
-			multiplyExpr();
-			setState(36);
-			_la = _input.LA(1);
-			if ( !(_la==T__0 || _la==T__1) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			setState(37);
-			multiplyExpr();
+			setState(42);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(35);
+				multiplyExpr();
+				setState(36);
+				_la = _input.LA(1);
+				if ( !(_la==T__0 || _la==T__1) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(37);
+				multiplyExpr();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(39);
+				_la = _input.LA(1);
+				if ( !(_la==INT || _la==ID) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(40);
+				_la = _input.LA(1);
+				if ( !(_la==T__0 || _la==T__1) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(41);
+				_la = _input.LA(1);
+				if ( !(_la==INT || _la==ID) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -328,7 +377,7 @@ public class Styx_refactoringParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(39);
+			setState(44);
 			_la = _input.LA(1);
 			if ( !(_la==INT || _la==ID) ) {
 			_errHandler.recoverInline(this);
@@ -338,7 +387,7 @@ public class Styx_refactoringParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(40);
+			setState(45);
 			_la = _input.LA(1);
 			if ( !(_la==T__2 || _la==T__3) ) {
 			_errHandler.recoverInline(this);
@@ -348,7 +397,7 @@ public class Styx_refactoringParser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(41);
+			setState(46);
 			_la = _input.LA(1);
 			if ( !(_la==INT || _la==ID) ) {
 			_errHandler.recoverInline(this);
@@ -409,39 +458,39 @@ public class Styx_refactoringParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(43);
+			setState(48);
 			match(T__4);
-			setState(52);
+			setState(57);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__8) | (1L << INT) | (1L << ID))) != 0)) {
 				{
 				{
-				setState(46);
+				setState(51);
 				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
+				switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 				case 1:
 					{
-					setState(44);
+					setState(49);
 					statement();
 					}
 					break;
 				case 2:
 					{
-					setState(45);
+					setState(50);
 					expression();
 					}
 					break;
 				}
-				setState(48);
+				setState(53);
 				match(SEMICOLON);
 				}
 				}
-				setState(54);
+				setState(59);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(55);
+			setState(60);
 			match(T__5);
 			}
 		}
@@ -492,39 +541,39 @@ public class Styx_refactoringParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(57);
+			setState(62);
 			match(T__6);
-			setState(65);
+			setState(70);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==INT || _la==ID) {
 				{
-				setState(63);
+				setState(68);
 				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
+				switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 				case 1:
 					{
-					setState(58);
+					setState(63);
 					match(ID);
-					setState(59);
+					setState(64);
 					match(COMMA);
 					}
 					break;
 				case 2:
 					{
-					setState(60);
+					setState(65);
 					expression();
-					setState(61);
+					setState(66);
 					match(COMMA);
 					}
 					break;
 				}
 				}
-				setState(67);
+				setState(72);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(68);
+			setState(73);
 			match(T__7);
 			}
 		}
@@ -567,13 +616,13 @@ public class Styx_refactoringParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(70);
+			setState(75);
 			match(T__8);
-			setState(71);
+			setState(76);
 			match(ID);
-			setState(72);
+			setState(77);
 			functionArgs();
-			setState(73);
+			setState(78);
 			statementsBlock();
 			}
 		}
@@ -613,9 +662,9 @@ public class Styx_refactoringParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(75);
+			setState(80);
 			match(ID);
-			setState(76);
+			setState(81);
 			functionArgs();
 			}
 		}
@@ -657,39 +706,39 @@ public class Styx_refactoringParser extends Parser {
 		AssignmentContext _localctx = new AssignmentContext(_ctx, getState());
 		enterRule(_localctx, 16, RULE_assignment);
 		try {
-			setState(87);
+			setState(92);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(78);
+				setState(83);
 				match(ID);
-				setState(79);
+				setState(84);
 				match(T__9);
-				setState(80);
+				setState(85);
 				expression();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(81);
+				setState(86);
 				match(ID);
-				setState(82);
+				setState(87);
 				match(T__9);
-				setState(83);
+				setState(88);
 				match(ID);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(84);
+				setState(89);
 				match(ID);
-				setState(85);
+				setState(90);
 				match(T__9);
-				setState(86);
+				setState(91);
 				match(INT);
 				}
 				break;
@@ -707,58 +756,30 @@ public class Styx_refactoringParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u000fZ\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
-		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
-		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
-		"\b\u0007\b\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000"+
-		"\u0001\u0000\u0004\u0000\u0019\b\u0000\u000b\u0000\f\u0000\u001a\u0001"+
-		"\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001\"\b"+
-		"\u0001\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0003\u0001"+
-		"\u0003\u0001\u0003\u0001\u0003\u0001\u0004\u0001\u0004\u0001\u0004\u0003"+
-		"\u0004/\b\u0004\u0001\u0004\u0001\u0004\u0005\u00043\b\u0004\n\u0004\f"+
-		"\u00046\t\u0004\u0001\u0004\u0001\u0004\u0001\u0005\u0001\u0005\u0001"+
-		"\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0005\u0005@\b\u0005\n\u0005"+
-		"\f\u0005C\t\u0005\u0001\u0005\u0001\u0005\u0001\u0006\u0001\u0006\u0001"+
-		"\u0006\u0001\u0006\u0001\u0006\u0001\u0007\u0001\u0007\u0001\u0007\u0001"+
-		"\b\u0001\b\u0001\b\u0001\b\u0001\b\u0001\b\u0001\b\u0001\b\u0001\b\u0003"+
-		"\bX\b\b\u0001\b\u0000\u0000\t\u0000\u0002\u0004\u0006\b\n\f\u000e\u0010"+
-		"\u0000\u0003\u0001\u0000\u0001\u0002\u0001\u0000\u000b\f\u0001\u0000\u0003"+
-		"\u0004Z\u0000\u0018\u0001\u0000\u0000\u0000\u0002!\u0001\u0000\u0000\u0000"+
-		"\u0004#\u0001\u0000\u0000\u0000\u0006\'\u0001\u0000\u0000\u0000\b+\u0001"+
-		"\u0000\u0000\u0000\n9\u0001\u0000\u0000\u0000\fF\u0001\u0000\u0000\u0000"+
-		"\u000eK\u0001\u0000\u0000\u0000\u0010W\u0001\u0000\u0000\u0000\u0012\u0013"+
-		"\u0003\u0002\u0001\u0000\u0013\u0014\u0005\r\u0000\u0000\u0014\u0019\u0001"+
-		"\u0000\u0000\u0000\u0015\u0016\u0003\u0004\u0002\u0000\u0016\u0017\u0005"+
-		"\r\u0000\u0000\u0017\u0019\u0001\u0000\u0000\u0000\u0018\u0012\u0001\u0000"+
-		"\u0000\u0000\u0018\u0015\u0001\u0000\u0000\u0000\u0019\u001a\u0001\u0000"+
-		"\u0000\u0000\u001a\u0018\u0001\u0000\u0000\u0000\u001a\u001b\u0001\u0000"+
-		"\u0000\u0000\u001b\u001c\u0001\u0000\u0000\u0000\u001c\u001d\u0005\u0000"+
-		"\u0000\u0001\u001d\u0001\u0001\u0000\u0000\u0000\u001e\"\u0003\f\u0006"+
-		"\u0000\u001f\"\u0003\u000e\u0007\u0000 \"\u0003\u0010\b\u0000!\u001e\u0001"+
-		"\u0000\u0000\u0000!\u001f\u0001\u0000\u0000\u0000! \u0001\u0000\u0000"+
-		"\u0000\"\u0003\u0001\u0000\u0000\u0000#$\u0003\u0006\u0003\u0000$%\u0007"+
-		"\u0000\u0000\u0000%&\u0003\u0006\u0003\u0000&\u0005\u0001\u0000\u0000"+
-		"\u0000\'(\u0007\u0001\u0000\u0000()\u0007\u0002\u0000\u0000)*\u0007\u0001"+
-		"\u0000\u0000*\u0007\u0001\u0000\u0000\u0000+4\u0005\u0005\u0000\u0000"+
-		",/\u0003\u0002\u0001\u0000-/\u0003\u0004\u0002\u0000.,\u0001\u0000\u0000"+
-		"\u0000.-\u0001\u0000\u0000\u0000/0\u0001\u0000\u0000\u000001\u0005\r\u0000"+
-		"\u000013\u0001\u0000\u0000\u00002.\u0001\u0000\u0000\u000036\u0001\u0000"+
-		"\u0000\u000042\u0001\u0000\u0000\u000045\u0001\u0000\u0000\u000057\u0001"+
-		"\u0000\u0000\u000064\u0001\u0000\u0000\u000078\u0005\u0006\u0000\u0000"+
-		"8\t\u0001\u0000\u0000\u00009A\u0005\u0007\u0000\u0000:;\u0005\f\u0000"+
-		"\u0000;@\u0005\u000e\u0000\u0000<=\u0003\u0004\u0002\u0000=>\u0005\u000e"+
-		"\u0000\u0000>@\u0001\u0000\u0000\u0000?:\u0001\u0000\u0000\u0000?<\u0001"+
-		"\u0000\u0000\u0000@C\u0001\u0000\u0000\u0000A?\u0001\u0000\u0000\u0000"+
-		"AB\u0001\u0000\u0000\u0000BD\u0001\u0000\u0000\u0000CA\u0001\u0000\u0000"+
-		"\u0000DE\u0005\b\u0000\u0000E\u000b\u0001\u0000\u0000\u0000FG\u0005\t"+
-		"\u0000\u0000GH\u0005\f\u0000\u0000HI\u0003\n\u0005\u0000IJ\u0003\b\u0004"+
-		"\u0000J\r\u0001\u0000\u0000\u0000KL\u0005\f\u0000\u0000LM\u0003\n\u0005"+
-		"\u0000M\u000f\u0001\u0000\u0000\u0000NO\u0005\f\u0000\u0000OP\u0005\n"+
-		"\u0000\u0000PX\u0003\u0004\u0002\u0000QR\u0005\f\u0000\u0000RS\u0005\n"+
-		"\u0000\u0000SX\u0005\f\u0000\u0000TU\u0005\f\u0000\u0000UV\u0005\n\u0000"+
-		"\u0000VX\u0005\u000b\u0000\u0000WN\u0001\u0000\u0000\u0000WQ\u0001\u0000"+
-		"\u0000\u0000WT\u0001\u0000\u0000\u0000X\u0011\u0001\u0000\u0000\u0000"+
-		"\b\u0018\u001a!.4?AW";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21a\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\3\2\3\2\3\2"+
+		"\3\2\3\2\3\2\6\2\33\n\2\r\2\16\2\34\3\2\3\2\3\3\3\3\3\3\5\3$\n\3\3\4\3"+
+		"\4\3\4\3\4\3\4\3\4\3\4\5\4-\n\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\5\6\66\n\6"+
+		"\3\6\3\6\7\6:\n\6\f\6\16\6=\13\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\7\7G"+
+		"\n\7\f\7\16\7J\13\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\n\3\n\3"+
+		"\n\3\n\3\n\3\n\3\n\3\n\3\n\5\n_\n\n\3\n\2\2\13\2\4\6\b\n\f\16\20\22\2"+
+		"\5\3\2\3\4\3\2\r\16\3\2\5\6\2b\2\32\3\2\2\2\4#\3\2\2\2\6,\3\2\2\2\b.\3"+
+		"\2\2\2\n\62\3\2\2\2\f@\3\2\2\2\16M\3\2\2\2\20R\3\2\2\2\22^\3\2\2\2\24"+
+		"\25\5\4\3\2\25\26\7\17\2\2\26\33\3\2\2\2\27\30\5\6\4\2\30\31\7\17\2\2"+
+		"\31\33\3\2\2\2\32\24\3\2\2\2\32\27\3\2\2\2\33\34\3\2\2\2\34\32\3\2\2\2"+
+		"\34\35\3\2\2\2\35\36\3\2\2\2\36\37\7\2\2\3\37\3\3\2\2\2 $\5\16\b\2!$\5"+
+		"\20\t\2\"$\5\22\n\2# \3\2\2\2#!\3\2\2\2#\"\3\2\2\2$\5\3\2\2\2%&\5\b\5"+
+		"\2&\'\t\2\2\2\'(\5\b\5\2(-\3\2\2\2)*\t\3\2\2*+\t\2\2\2+-\t\3\2\2,%\3\2"+
+		"\2\2,)\3\2\2\2-\7\3\2\2\2./\t\3\2\2/\60\t\4\2\2\60\61\t\3\2\2\61\t\3\2"+
+		"\2\2\62;\7\7\2\2\63\66\5\4\3\2\64\66\5\6\4\2\65\63\3\2\2\2\65\64\3\2\2"+
+		"\2\66\67\3\2\2\2\678\7\17\2\28:\3\2\2\29\65\3\2\2\2:=\3\2\2\2;9\3\2\2"+
+		"\2;<\3\2\2\2<>\3\2\2\2=;\3\2\2\2>?\7\b\2\2?\13\3\2\2\2@H\7\t\2\2AB\7\16"+
+		"\2\2BG\7\20\2\2CD\5\6\4\2DE\7\20\2\2EG\3\2\2\2FA\3\2\2\2FC\3\2\2\2GJ\3"+
+		"\2\2\2HF\3\2\2\2HI\3\2\2\2IK\3\2\2\2JH\3\2\2\2KL\7\n\2\2L\r\3\2\2\2MN"+
+		"\7\13\2\2NO\7\16\2\2OP\5\f\7\2PQ\5\n\6\2Q\17\3\2\2\2RS\7\16\2\2ST\5\f"+
+		"\7\2T\21\3\2\2\2UV\7\16\2\2VW\7\f\2\2W_\5\6\4\2XY\7\16\2\2YZ\7\f\2\2Z"+
+		"_\7\16\2\2[\\\7\16\2\2\\]\7\f\2\2]_\7\r\2\2^U\3\2\2\2^X\3\2\2\2^[\3\2"+
+		"\2\2_\23\3\2\2\2\13\32\34#,\65;FH^";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

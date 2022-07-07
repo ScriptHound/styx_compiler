@@ -21,6 +21,7 @@ statement
 
 expression
     : multiplyExpr ('+'|'-') multiplyExpr
+    | (ID|INT) ('+'|'-') (ID|INT)
     ;
 
 multiplyExpr

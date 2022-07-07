@@ -1,3 +1,11 @@
 proc my_procedure(arg_one, arg_two,){
 	a = arg_one;
 };
+
+proc another_procedure(){
+	y = 6;
+	x = 10;
+	result = 6 + 10;
+};
+
+my_var = 2;
