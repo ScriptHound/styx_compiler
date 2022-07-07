@@ -1,7 +1,18 @@
-grammar styx_general;
+grammar Styx_general;
 
 INT : [0-9]+;
 ID: [a-zA-Z_\-]+;
+SEMICOLON: ';';
+
+prog
+     : statement+ EOF
+     ;
+
+statement
+     : expression SEMICOLON
+     | procedure SEMICOLON
+     | SEMICOLON
+     ;
 
 assignment
      :    ID '=' INT
@@ -30,7 +41,7 @@ expressionList
      ;
 
 expressionsBlock
-     : '{' (expression ';')* '}'
+     : '{' (expression SEMICOLON)* '}'
      ;
 
 returnStatement

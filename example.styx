@@ -1,7 +1,3 @@
-proc my_procedure(arg_one, arg_two){
+proc my_procedure(arg_one, arg_two,){
 	a = arg_one;
-	b = arg_one + arg_two * 2;
-}
-
-my_int_variable = 566;
-
+};
